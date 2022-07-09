@@ -1,0 +1,13 @@
+<div class="header_bottom">
+    <div class="her-bo-center">
+        <div class="logo ru-posit">
+            <a href="{{siteConf 'url'}}" title="{{i18n 'main-page'}}" class="a-to-m">
+                <span>{{i18n 'serviceNamePath1'}}</span><wbr />
+                <span>{{{i18n 'serviceNamePath2'}}}</span>
+            </a>
+        </div>
+        <div class="header-sear-f ru-posit">
+            {{#if (accessHidden 'admin')}}{{> partials/search-form-kod}}{{/if}}
+        </div>
+    </div>
+</div>

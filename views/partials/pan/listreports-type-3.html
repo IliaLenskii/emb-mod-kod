@@ -1,0 +1,20 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on the results of3'}}
+    </div>
+    <div class="__margin-top_l __margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Total number of claims1'}}</div>
+        <div class="__inline-block" id="type-3_all">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Classified1'}}</div>
+        <div class="__inline-block" id="type-3_classified">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Unclassified'}}</div>
+        <div class="__inline-block" id="type-3_unclassified">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" id="type-3_link" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=type-3&showreport=true" class="btn __gray_btn" id="type-3_href">Подробный отчет</a>
+    </div>
+</div>

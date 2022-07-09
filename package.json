@@ -1,0 +1,49 @@
+{
+  "name": "classification",
+  "description": "none",
+  "main": "index.js",
+  "route": "classification",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "kodeks",
+    "monitor",
+    "plugin"
+  ],
+  "author": "Ilya Lenskiy",
+  "license": "ISC",
+  "bugs": "i-sector@kodeks.ru",
+  "contributors": "Popov Aleksey <popov@kodeks.ru>",
+  "repository": "",
+  "recommendations": "",
+  "homepage": "http://dpt.kodeks.ru/",
+  "dependencies": {
+    "async": "^2.4.1",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "dateformat": "^3.0.3",
+    "detect-browser": "^1.6.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.2",
+    "i18n": "^0.8.3",
+    "pg": "^6.4.2",
+    "soap": "^0.24.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 8.10"
+  },
+  "version": "0.7.14",
+  "required_licenses": [
+    333101000
+  ],
+  "process": {
+    "cmd": "nsh.exe",
+    "args": [
+      "--inspect"
+    ]
+  }
+}

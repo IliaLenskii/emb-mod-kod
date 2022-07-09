@@ -1,0 +1,129 @@
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+
+{{#if docs}}
+<div class="classifiers-layouts relat-height part-reports">
+    <form class="analytic-reports" method="get" enctype="multipart/form-data" name="analytic-reports" action="{{siteConf 'url'}}pan/list-reports">
+    <div class="__border-top">
+        <div class="col-xs-6 __border-left  __border-right __padding-right_null __padding-left_null">
+            {{> layouts/pan/list-docs}}
+        </div>
+    </div>
+        <div class="col-xs-6 __padding-top_xl __padding-left_xl __analytic-select-doc">
+            {{i18n 'Please select one or more documents'}}
+        </div>
+    <div class="col-xs-6 __padding-top_xl __padding-left_xl __analytic-available-reports __hidden">
+        <h3 class="">Выбраны документы: <span class="__analytic-selected-docs-cnt"></span>. Доступны отчеты:</h3>
+
+            <div class="form-group __analytic-report-for-single">
+                <label class="lab-report" title="">
+                    <input type="checkbox" class="vfm" name="reports" value="disablednd"><span>Отчет о наличии в тексте НД/проекте НД ссылок на отмененные НД</span>
+                </label>
+            </div>
+            <div class="form-group __analytic-report-for-single">
+                <label class="lab-report" title="">
+                    <input type="checkbox" class="vfm" name="reports" value="normative"><span>{{i18n 'Report on references in the text of the document to other normative documents'}}</span>
+                </label>
+            </div>
+            <div class="form-group __analytic-report-for-single">
+                <label class="lab-report" title="">
+                    <input type="checkbox" class="vfm" name="reports" value="abbr"><span>Отчет о перечне аббревиатур и сокращений в тексте НД, не упомянутых в разделе «Обозначения и сокращения»</span>
+                </label>
+            </div>
+        <div class="form-group __analytic-report-for-single">
+            <label class="lab-report" title="">
+                <input type="checkbox" class="vfm" name="reports" value="abbr-comp"><span>{{i18n 'Report on the list of abbreviations compare'}}</span>
+            </label>
+        </div>
+            <div class="form-group __analytic-report-for-single">
+                <label class="lab-report" title="">
+                    <input type="checkbox" class="vfm" name="reports" value="terms"><span>{{i18n 'Report on terms and definitions'}}</span>
+                </label>
+            </div>
+        <div class="form-group __analytic-report-for-single __analytic-report-for-many">
+            <label class="lab-report" title="">
+                <input type="checkbox" class="vfm" name="reports" value="type-1"><span>{{i18n 'Report on the stages of classification1'}}</span>
+            </label>
+        </div>
+        <div class="form-group __analytic-report-for-single __analytic-report-for-many">
+            <label class="lab-report" title="">
+                <input type="checkbox" class="vfm" name="reports" value="type-2"><span>{{i18n 'Report on classified ND / ND projects'}}</span>
+            </label>
+        </div>
+        <div class="form-group __analytic-report-for-single">
+            <label class="lab-report" title="">
+                <input type="checkbox" class="vfm" name="reports" value="type-3"><span>{{i18n 'Report on the results of3'}}</span>
+            </label>
+        </div>
+            <div class="form-group __padding-top_l">
+                <!--<a href="javascript:;" class="btn typ-save">Построить отчеты</a>-->
+                <input type="submit" href="javascript:;" class="btn typ-save" value="Построить отчеты">
+            </div>
+    </div>
+    </form>
+</div>
+{{else}}
+<br/>
+<h2>Поиск НД для анализа</h2>
+<div class="part-attr-search analytics-search __padding-bottom_l">
+    <form class="attribute-search" method="get" enctype="multipart/form-data" name="analytic-search" action="{{siteConf 'url'}}pan/attribute-search-form">
+        {{#if searchError}}
+        <div class="search-results-message __use-select-none">
+            <p class="icon-s-s"><svg class="svg-icon " viewBox="0 0 50 50"><use xlink:href="#ei-search-icon" /></svg></p>
+            <p class="explanation-m">{{searchError}}</p>
+            <p class="what-to-do">
+                {{i18n 'Please specify the wording of the request.'}}<br />
+            </p>
+        </div>
+        {{/if}}
+        <div class="row">
+            {{> layouts/pan/attributes-for-search}}
+        </div>
+        <div class="line-content form-btn-save-reset __margin-top_l">
+            <button type="reset" class="btn __default marg-right" tabindex="99">{{i18n 'Reset values'}}</button>
+            <button type="submit" class="btn sub-b" tabindex="2">{{i18n 'Search'}}</button>
+            <div class="icon icon--ei-spinner-3">
+                <div class="icon__spinner">
+                    <svg class="icon__cnt"><use xlink:href="#ei-spinner-3-icon"></use></svg>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="search-results-message __search-results-empty __hidden" data-title="{{i18n 'Search results'}}">
+        <p class="icon-s-s"><svg class="svg-icon " viewBox="0 0 50 50"><use xlink:href="#ei-search-icon" /></svg></p>
+        <p class="what-to-do">
+            {{i18n 'Nothing found'}}
+        </p>
+    </div>
+</div>
+{{/if}}
+{{> layouts/pan/document.title}}
+
+<script>
+    (function(){
+
+        if(!$ || !window.ClassSubM)
+            return;
+        var mB = $('body .wrapper .part-attr-search');
+        //console.log( $('.part-attr-search', mB));
+        ClassSubM.attrSearch({
+            title: "Найти НД в ИСУНД АСУТП",
+            htmlBody: $(mB)
+        });
+        var reportsBody = $('body .wrapper .part-reports');
+        ClassSubM.getReports({
+            title: "Доступные отчеты",
+            htmlBody: reportsBody,
+        });
+    })();
+</script>

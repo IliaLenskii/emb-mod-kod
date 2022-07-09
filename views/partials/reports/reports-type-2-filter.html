@@ -1,0 +1,77 @@
+<div class="reports-type-2-filter filter-t-1-2 __use-select-none">
+
+    <form name="reports-type-2-filter" method="post" enctype="multipart/form-data" action="{{siteConf 'url'}}reports/reports-type-2-filter">
+
+        <div class="middle-dia-content">
+            <label class="la">
+                <div class="content-name">{{i18n 'Name of ND'}}</div>
+                
+                <div class="in-a">
+                    <input type="text" class="it" maxlength="100" data-minlength="2" name="name_doc" data-required="2" tabindex="1" autofocus placeholder="{{i18n 'Enter a phrase to search for'}}" />
+                    <a href="javascript:;" class="icon-cross trans-anim cle" title="{{i18n 'Clear'}}"><svg><use xlink:href="#ei-close-icon"></use></svg></a>
+                </div>
+            </label>
+        </div>
+
+        <div class="middle-dia-content column-2" style="display: none;">
+            <label class="la">
+                <div class="content-name">{{i18n 'Report Date of classification'}}</div>
+                
+                <div class="in-a">
+                    
+                </div>
+            </label>
+            <label class="la">
+                <div class="content-name">{{i18n 'Report classification status'}}</div>
+                
+                <div class="in-a">
+                    <!--
+                    <input type="hidden" name="step[1][executorId]" data-required="2" />
+                    -->
+                    <input type="text" class="it vcur bg-tria executor" readonly tabindex="3" placeholder="{{i18n 'Select a value'}}" />
+                    <a href="javascript:;" class="icon-cross trans-anim cle" title="{{i18n 'Clear'}}"><svg><use xlink:href="#ei-close-icon"></use></svg></a>
+                </div>
+            </label>
+        </div>
+
+        <div class="middle-dia-content column-2">
+            <label class="la">
+                <div class="content-name">{{i18n 'Report FIO Expert'}}</div>
+
+                <div class="in-a">
+                    <input type="hidden" name="step[0][executorId]" data-required="2" />
+                    <input type="text" class="it vcur bg-tria executor" readonly tabindex="2" placeholder="{{i18n 'Select a value'}}" />
+                    <a href="javascript:;" class="icon-cross trans-anim cle" title="{{i18n 'Clear'}}"><svg><use xlink:href="#ei-close-icon"></use></svg></a>
+                </div>
+
+                {{> partials/users-file-list}}
+            </label>
+        </div>
+
+        <div class="empty-result">
+            <div class="mess">{{i18n 'Could not find the matching documents'}}</div>
+            <a href="javascript:;" class="em-re-continue">{{i18n 'Continue'}}</a>
+        </div>
+
+        <div class="line-content form-btn-save-reset">
+            <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+            <button type="submit" disabled="disabled" class="btn" tabindex="5">{{i18n 'Filter'}}</button>
+        </div>
+    </form>
+    
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('.reports-type-2-filter');
+
+            if(mB.length < 1)
+                return;
+
+            ClassSubM.workFilterType2({mB: mB});
+
+        })();
+    </script>
+</div>

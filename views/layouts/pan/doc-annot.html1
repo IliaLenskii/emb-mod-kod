@@ -1,0 +1,40 @@
+{{#if onlyAdmin}}
+<div class="doc-list-tools">
+    <div class="doc-list-tools-itm">
+        <ul class="additi-func lst">
+            <li>
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="to-folder and-exp" data-addit-nd="{{nd}}">{{i18n 'Appoint experts'}}</a>
+                    </li>
+                    {{#if noindb}}
+                    <li>
+                        <a href="javascript:;" class="to-folder no-exp" data-addit-nd="{{nd}}">{{i18n 'Put in a folder'}}</a>
+                    </li>
+                    {{/if}}
+
+                    <!--
+                    <li>
+                        <a href="javascript:;" class="" data-addit-nd="{{nd}}">{{i18n 'Start the classification'}}</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="" data-addit-nd="{{nd}}">{{i18n 'Remove from folder'}}</a>
+                    </li>
+                    -->
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+{{/if}}
+
+<div class="doc-list-info">
+    <input tabindex="-1" id="box_{{nd}}" data-addit-nd="{{nd}}" class="" type="checkbox"><label for="check1"></label>
+    {{#if notifListDoc}}<div class="note-you-appoi">{{i18n 'Note! You are appointed by the expert to'}}</div>{{/if}}
+    {{#if emptyText}}<div class="document-no-text">{{i18n "The document without text can't be classified"}}</div>{{/if}}
+    {{#if hasCheck}}<input type="checkbox" name="_id[]" value="{{id}}" class="check-doc" data-required="1" id="lab-{{idx}}" />{{/if}}
+
+    <label class="annot-name" {{#if hasCheck}}for="lab-{{idx}}"{{/if}}>{{{name}}}</label>
+
+</div>

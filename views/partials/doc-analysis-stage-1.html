@@ -1,0 +1,36 @@
+<div class="w-column-l doc-analysis-stage-1 __relative">
+
+    <div class="ul-max in-l-demand __use-select-none">
+        <ul class="list-demand">{{> partials/list-demand-itm}}</ul>
+    </div>
+
+    <div class="co-bottom demand-blk-formm">
+        <form name="demand-into-parts" id="demand-into-parts" method="post" enctype="multipart/form-data" autocomplete="off" action="demand-into-parts">
+            <input type="hidden" name="makedem" value="1" />
+            <input type="hidden" name="nd" value="{{doc.nd}}" />
+            <input type="hidden" name="id" value="{{doc.id}}" />
+            <input type="hidden" id="data-arr-pids" data-arr-pids="{{arrPids}}" />
+
+            {{#if editing}}
+            <input type="hidden" name="id_demand" />
+            <input type="hidden" name="selectedpid" class="selectedpid" data-can-clear="1" data-required="1" />
+            <input type="hidden" name="name_demand" />
+            <input type="hidden" name="from_broom" data-can-clear="1" />
+
+            <div class="__hidden text-parts"></div>
+
+            <div class="type-btm-vbg">
+                <a href="javascript:;" class="aor edit-requirement">{{i18n 'Edit the comp requirement'}}</a>
+                <a href="javascript:;" class="aor edit-requirement nename">{{i18n 'Rename Requirement'}}</a>
+                <a href="javascript:;" class="aor disband-demand">{{i18n 'Disband claim'}}</a>
+            </div>
+
+            <button type="submit" class="btn sb-dem" disabled>
+                <span class="t-form-req">{{i18n 'Form Requirement'}}</span>
+                <span class="save-title">{{i18n 'Save requirement'}}</span>
+            </button>
+            {{/if}}
+        </form>
+    </div>
+
+</div>

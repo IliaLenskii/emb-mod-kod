@@ -1,0 +1,83 @@
+<div class="part-attr-search">
+    <form style="width: 1050px; overflow-x: hidden;" class="attribute-search" method="get" enctype="multipart/form-data" action="{{siteConf 'url'}}attribute-search-form">
+
+        <div style="height: 400px; overflow-x: hidden; overflow-y: scroll;">
+        {{#each formElems}}
+        <div style="display: block; padding: 7px; position: relative;" class="middle-dia-content">
+            <label style="width: 250px; float: left; text-align: right; margin-right: 10px; font-weight: bold;">{{{this/name/$value}}}</label>
+            {{#if (math this/type/$value '==' 2)}}
+            <input style="width: 750px;" type="text" class="it" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_value" data-required="1" tabindex="1" placeholder="{{i18n 'Folder name'}}" />
+            {{/if}}
+            {{#if (math this/type/$value '==' 5)}}
+            <select class="it cllogic" style="width: 100px; display: none;" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_lop">
+                <option value="OR">ИЛИ</option>
+                <option value="AND">И</option>
+                <option value="NOT">Кроме</option>
+            </select>
+            <input style="width: 750px;" type="text" class="classif-it it" data-required="1" tabindex="1" placeholder="{{i18n 'Folder name'}}" />
+            <ul class="classif-list it" style="max-height: 180px; overflow-y: scroll; width:750px; margin-left: 250px; display: none; list-style: none; position: absolute; z-index: 999999; background: #fff; box-shadow: 2px 2px 4px #777">
+            {{#each this/classifiers}}
+            <li style="cursor: pointer;" cid="{{{this/id/$value}}}">{{{this/name/$value}}}</li>
+            {{/each}}
+            </ul>
+            <input type="hidden" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_values" />
+            {{/if}}
+            {{#if (math this/type/$value '==' 1)}}
+            <select class="it datemode" style="width: 100px;" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_mode">
+                <option value="0">Точно</option>
+                <option value="1">По</option>
+                <option value="2">С</option>
+                <option value="3">Период</option>
+                <option value="4">Вне периода</option>
+            </select>
+            <span class="start-date" style="display: none;"><span class="date-pref"> с </span><input style="width: 95px;" class="it dtp" type="text" default="__.__.____" value="__.__.____"></span>
+            <span class="end-date"><span class="date-pref" style="display: none;"> по </span><input style="width: 95px;" class="it dtp" type="text" default="__.__.____" value="__.__.____"></span>
+            <input type="hidden" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_values" />
+            {{/if}}
+            {{#if (math this/type/$value '==' 3)}}
+            <select class="it" style="width: 100px;" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_mode">
+                <option value="1">Точно</option>
+                <option value="2">Содержит</option>
+                <option value="4">Начинается с</option>
+            </select>
+            <input style="width: 650px;" type="text" class="it" name="id_{{{this/id/$value}}}_type_{{{this/type/$value}}}_value" data-required="1" tabindex="1" placeholder="{{i18n 'Folder name'}}" />
+            {{/if}}
+        </div>
+        {{#if (math this/id/$value '==' 3)}}
+        <a href="#"></a>
+        <div class="hiddenBlock">
+        {{/if}}
+        {{#if (math this/id/$value '==' 14)}}
+        </div>
+        {{/if}}
+        {{/each}}
+        </div>
+        <input type="hidden" name="transneftId" value="{{transneftId}}" />
+
+        <div class="line-content form-btn-save-reset">
+            <button type="reset" class="btn __default marg-right" tabindex="99">{{i18n 'Reset values'}}</button>
+            <button type="submit" class="btn sub-b" tabindex="2">{{i18n 'Search'}}</button>
+            <div class="icon icon--ei-spinner-3">
+                <div class="icon__spinner">
+                    <svg class="icon__cnt"><use xlink:href="#ei-spinner-3-icon"></use></svg>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--
+<div class="form-group">
+    <label class="control-label col-sm-2">Наименование:</label>
+    <div class="col-sm-8">
+        <input type="text" value="" class="form-control" name="attr_0_" id="attr_0_">
+    </div>
+</div>
+
+<div class="form-group"><label class="control-label col-sm-2">Номер:</label><div class="col-sm-8"><div class="row"><div class="col-sm-4"><select class="form-control" name="attrf_3_" id="attrf_3_" data-placeholder="Выберите значение" style="display: none;">
+<option value="1">точно</option>
+<option value="2">содержит</option>
+<option value="4">начинается с</option>
+</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title="" id="attrf_3__chosen"><a tabindex="-1" class="chosen-single"><span>точно</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div></div><div class="col-sm-8"><input type="text" value="" class="form-control" name="attr_3_" id="attr_3_"></div></div></div></div>
+
+-->

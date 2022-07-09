@@ -1,0 +1,14 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on references in the text of the document to other normative documents'}}
+    </div>
+    <div class="__strong __inline-block __color-red __margin-bottom_s __margin-top_xl" id="normative_actual"></div>
+
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Other ND links'}}:</div>
+        <div class="__inline-block" id="normative_incllinks">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=normative&showreport=true" class="btn __gray_btn" id="normative_href">Подробный отчет</a>
+    </div>
+</div>

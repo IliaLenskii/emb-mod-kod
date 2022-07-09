@@ -1,0 +1,22 @@
+{{#each itms}}
+    <tr class="{{css}}">
+        {{#if empty}}
+            <td colspan="14" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+        {{else}}
+            {{#each rows}}
+                <td class="{{css}}" {{#if colspan}} colspan="{{colspan}}"{{/if}}>
+                {{#if name}}{{{name}}}{{/if}}
+                {{#if isPid}}
+                    {{#each sliceText}}<p class="req-p">{{this}}</p>{{/each}}
+                {{else if (ifCond row.length '>' 1)}}
+                    <div class="dropdown">
+                        <div class="tooltip-link"> {{row.length}}</div>
+                        <div class="tooltip">{{#each row}}<div>{{{this}}}</div>{{/each}}</div>
+                    </div>
+                {{else }} {{#each row}}{{{this}}}<br />{{/each}}
+                {{/if}}
+                </td>
+                {{/each}}
+        {{/if}}
+    </tr>
+{{/each}}

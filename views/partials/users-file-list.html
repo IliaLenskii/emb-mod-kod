@@ -1,0 +1,16 @@
+<div class="classifs-itm users-file-list">
+    <div class="b-cleff">
+        <a href="javascript:;" class="clear-us">{{i18n 'Clear'}}</a>
+    </div>
+    <ul class="lst">
+    {{#each userList}}
+        <li>
+            <a href="javascript:;" class="cur-itm" data-id="{{id}}">
+                <span class="s-name v1">{{name}}</span>
+                {{#if login2}}<span class="s-login2">({{login2}})</span>{{/if}}
+                <span class="s-department"><br />{{department}}</span>
+            </a>
+        </li>
+    {{/each}}
+    </ul>
+</div>

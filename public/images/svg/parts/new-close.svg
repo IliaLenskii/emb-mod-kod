@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21">
+    <symbol id="new-close-icon" viewBox="0 0 21 21">
+        <circle stroke-width="1.1" cx="9.75" cy="9.75" r="9.25" fill="#fff"></circle>
+        <g transform="translate(6.880005, 6.500000)" stroke-width="1.2">
+            <path d="M0.157593877,0.438115044 L6.08595484,6.34616208"></path>
+            <path d="M0.157593877,0.438115044 L6.08595484,6.34616208" transform="translate(3.121774, 3.392139) scale(-1, 1) translate(-3.121774, -3.392139) "></path>
+        </g>
+    </symbol>
+
+    <use xlink:href="#new-close-icon" stroke="#02599B" viewBox="0 0 21 21"></use>
+</svg>

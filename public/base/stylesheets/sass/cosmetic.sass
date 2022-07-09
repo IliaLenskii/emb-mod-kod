@@ -1,0 +1,315 @@
+@import "mixins"
+@import "variables"
+.__margin-bottom_xs
+	margin-bottom: 5px
+.__margin-bottom_s
+	margin-bottom: 10px
+
+.__margin-bottom_m
+	margin-bottom: 15px
+
+.__margin-bottom_l
+	margin-bottom: 20px
+
+.__margin-bottom_xl
+	margin-bottom: 30px
+
+.__margin-bottom_xxl
+	margin-bottom: 30px
+
+.__margin-top_xs
+	margin-top: 5px
+
+.__margin-top_s
+	margin-top: 10px
+
+.__margin-top_m
+	margin-top: 15px
+
+.__margin-top_l
+	margin-top: 20px
+
+.__margin-top_xl
+	margin-top: 30px
+
+.__margin-top_xxl
+	margin-top: 50px
+
+.__margin-top_xxxl
+	margin-top: 90px
+
+.__margin-right_xs
+	margin-right: 5px
+
+.__margin-right_s
+	margin-right: 10px
+
+.__margin-right_m
+	margin-right: 15px
+
+.__margin-right_l
+	margin-right: 20px
+
+.__margin-right_xl
+	margin-right: 30px
+
+.__margin-right_xxl
+	margin-right: 50px
+
+.__margin-left_xs
+	margin-left: 5px
+
+.__margin-left_s
+	margin-left: 10px
+
+.__margin-left_m
+	margin-left: 15px
+
+.__margin-left_l
+	margin-left: 20px
+
+.__margin-left_xl
+	margin-left: 30px
+
+.__margin-left_xxl
+	margin-left: 50px
+
+
+.__padding-bottom_xs
+	padding-bottom: 5px
+
+.__padding-bottom_s
+	padding-bottom: 10px
+
+.__padding-bottom_m
+	padding-bottom: 15px
+
+.__padding-bottom_l
+	padding-bottom: 20px
+
+.__padding-bottom_xl
+	padding-bottom: 30px
+
+.__padding-bottom_xxl
+	padding-bottom: 50px
+
+.__padding-right_xxxl
+	padding-right: 110px
+
+.__padding-left_xxxl
+	padding-left: 110px
+
+.__padding-right_xs
+	padding-right: 5px
+
+.__padding-right_s
+	padding-right: 10px
+
+.__padding-right_m
+	padding-right: 15px
+
+.__padding-right_l
+	padding-right: 20px
+
+.__padding-right_xl
+	padding-right: 30px
+
+.__padding-right_xxl
+	padding-right: 50px
+
+.__padding-left_xs
+	padding-left: 5px
+
+.__padding-left_s
+	padding-left: 10px
+
+.__padding-left_m
+	padding-left: 15px
+
+.__padding-left_l
+	padding-left: 20px
+
+.__padding-left_xl
+	padding-left: 30px
+
+.__padding-left_xxl
+	padding-left: 50px
+
+.__padding-top_xs
+	padding-top: 5px
+
+.__padding-top_s
+	padding-top: 10px
+
+.__padding-top_m
+	padding-top: 15px
+
+.__padding-top_l
+	padding-top: 20px
+
+.__padding-top_xl
+	padding-top: 30px
+
+.__padding-top_xxl
+	padding-top: 50px
+
+.__align_center
+	text-align: center
+
+.__align_left
+	text-align: left
+
+.__align_right
+	text-align: right
+
+.__hidden
+	display: none
+
+.__visible
+	display: block
+
+.__scroll
+	position: fixed
+
+.__block
+	display: block
+
+.__inline-block
+	display: inline-block
+
+.__inline
+	display: inline
+
+.__decoration_none
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+
+.__uppercase
+	text-transform: uppercase
+
+.__lowercase
+	text-transform: lowercase
+
+.__none-trasform
+	text-transform: none
+
+.__border
+	border: 1px solid darken($default, 3%)
+
+.__border_top
+	border-top: 1px solid darken($default, 3%)
+
+.__border_right
+	border-right: 1px solid darken($default, 3%)
+
+.__border_bottom
+	border-bottom: 1px solid darken($default, 3%)
+
+.__border_left
+	border-left: 1px solid darken($default, 3%)
+
+.__border_dashed
+	border: 1px dashed darken($default, 3%)
+
+.__overflow_hidden
+	overflow: hidden
+
+.__relative
+	position: relative
+
+.__no-border_left
+	border-left: none
+
+.__no-border_right
+	border-right: none
+
+.__no-border_bottom
+	border-bottom: none
+
+.__top_left
+	position: absolute
+	top: 0px
+	left: 0px
+
+.__top_right
+	position: absolute
+	top: 0px
+	right: 0px
+
+.__bottom_left
+	position: absolute
+	bottom: 0px
+	left: 0px
+
+.__bottom_right
+	position: absolute
+	bottom: 0px
+	right: 0px
+
+.__float_left
+	float: left
+
+.__float_right
+	float: right
+
+.__float_none
+	float: none
+
+.__overfow_hidden
+	overflow: hidden
+
+.__bg_clear
+	background: $clear
+
+.__bg_project-default
+	background: $project-default
+
+.__color_clear
+	color: $clear
+
+.__color_project-default
+	color: $project-default
+
+.__color_base
+	color: $base
+
+.__color_normal
+	color: $normal
+
+.__color_default
+	color: $default
+
+.__strong
+	font:
+		family: $medium
+
+.__normal
+	font:
+		family: $roman
+
+.__light
+	font:
+		family: $light
+
+
+.__box-shadow
+	box-shadow: 0px 1px 1px 0px rgba(221, 221, 221, 1)
+
+
+.overlay
+	&.__js-header
+		z-index: 99998
+		position: fixed
+		background-color: rgba(68, 68, 68, 0.7)
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		visibility: hidden
+		opacity: 0
+		overflow: auto
+		@include transition(all 0.3s)
+		&.__vis
+			visibility: visible
+			opacity: 1

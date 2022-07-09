@@ -1,0 +1,30 @@
+<div class="ready-made-add __use-select-none">
+    <form name="ready-made-add" method="post" enctype="multipart/form-data" autocomplete="off" action="{{siteConf 'url'}}doc/ready-made">
+        <input type="hidden" name="id_made" value="{{id}}" />
+
+        <div class="middle-dia-content">
+
+            <div class="b-name-made">
+                <input type="text" class="it" maxlength="200" data-minlength="3" name="name_made" data-required="1" tabindex="1" placeholder="{{i18n 'Name-oth'}}" value="{{name_made}}" /><a href="javascript:;" class="icon-cross trans-anim cle" title="{{i18n 'Clear'}}"><svg><use xlink:href="#ei-close-icon"></use></svg></a>
+            </div>
+
+            <div class="b-switcher-made" hidden>{{> partials/ready-made-switch}}</div>
+
+            <div class="fi-classificators blk-spec">
+                {{#each arrTrees}}
+                <div class="parent-blk-classificators animated faster">
+                    <a href="javascript:;" class="close-elbl st-11-cl" title="{{i18n 'Close'}}"></a>
+                    {{{this}}}
+                    <div class="only-choose-classif"></div>
+                </div>
+                {{/each}}
+                {{#if preloadguids}}<div class="preload-guids">{{{preloadguids}}}</div>{{/if}}
+            </div>
+        </div>
+
+        <div class="line-content form-btn-save-reset">
+            <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+            <button type="submit" disabled="disabled" class="btn" tabindex="2">{{i18n 'Save'}}</button>
+        </div>
+    </form>
+</div>

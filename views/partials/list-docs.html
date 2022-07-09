@@ -1,0 +1,34 @@
+<div class="doc-list __use-select-none" data-list-id="{{listid}}">
+    <div class="doc-list-head">
+        <div class="docs-count">{{#if docsCount}}{{i18n 'material'}}:&nbsp;{{docsCount}} {{/if}}</div>
+    </div>
+    <ul class="doc-list-ul" {{{restScroll}}}>
+    {{#each docs}}
+        <li class="doc-list-li not-emt-{{empty}} m-alert-{{notifListDoc}}{{#if emptyText}} empty-text{{/if}}" {{#if id}}data-lid-doc="{{id}}"{{/if}}>
+            {{#if empty}}
+                <div class="__align_center"><span>{{i18n 'empty'}}</span></div>
+            {{else}}
+                {{> partials/doc-annot}}
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('.doc-list[data-list-id="{{listid}}"]');
+
+            if(mB.length < 1)
+                return;
+
+            ClassSubM.listEvents({
+                el: mB
+            });
+
+        })();
+    </script>
+</div>

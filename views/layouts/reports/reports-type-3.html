@@ -1,0 +1,69 @@
+<div class="reports-type-3 reports-page relat-height">
+    <h2 class="__header-blue">{{{title}}}</h2>
+    <h3>{{i18n 'Report on the results of3'}}</h3>
+
+    <div class="po-barnus">
+        {{> partials/reports/reports-table-filter}}
+
+        <table class="table-head-m  __use-select-none table-bordered">
+            {{#if titleUVal }}<tr>{{#each titleU}}<th class="{{css}}">{{name}}</th>{{/each}}</tr>{{/if}}
+            {{#if titleUVal}}<tr>{{#each titleUVal}}<td class="{{css}} __align_center">{{name}}</td>{{/each}}</tr>{{/if}}
+            <tr>{{#each titleTh}}<th class="{{css}}">{{name}}</th>{{/each}}</tr>
+        </table>
+
+        <div class="scr-table">
+            <table class="table-report table table-bordered">
+                {{> partials/reports/reports-type-3-itm}}
+            </table>
+        </div>
+    </div>
+
+    {{> partials/document.title}}
+
+    <script>
+        (function(){
+
+            if(!window.$ || !window.ClassSubM)
+                return;
+
+            var mB = $('body .wrapper .reports-type-3');
+
+            ClassSubM.filterType3({mB: mB});
+
+            $('.dropdown', mB).each(function () {
+               var context = $(this),
+                   tooltip =  $('.tooltip', context),
+                   content =  tooltip.html();
+
+               tooltip.remove();
+
+               context.webuiPopover({
+                    content: content,
+                    placement: 'bottom-right',
+                    width: '310px',
+                    style: 'tooltip tooltipInReport',
+                    offsetTop: -15
+                })
+
+            });
+
+            $('.scr-table').on('scroll', function() {
+                WebuiPopovers.hideAll();
+            });
+        })();
+    </script>
+</div>
+
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+

@@ -1,0 +1,52 @@
+<div class="reports-type-4 reports-page relat-height">
+    <h2 class="__header-blue">{{{title}}}</h2>
+    <h3>{{i18n 'Report on the list of abbreviations compare'}}</h3>
+    <div class="po-barnus">
+        {{> partials/reports/reports-table-filter}}
+
+        <table class="table-head-m  __use-select-none">
+            <tr>
+                <th class="num-puk">{{i18n '#p/p'}}</th>
+                <th class="require-ments" width="19%">{{i18n 'Acronym'}}</th>
+                <th class="require-ments" width="19%">{{i18n 'Explanation'}}</th>
+                <th class="require-ments" width="19%">{{i18n 'Explanation from the terms dictionary'}}</th>
+                <th class="require-ments" width="19%">{{i18n 'Source of the term'}}</th>
+                <th class="require-ments" width="19%">{{i18n 'Link to the entry'}}</th>
+            </tr>
+        </table>
+
+        <div class="scr-table">
+            <table class="table-report table table-bordered">
+                {{> partials/pan/reports/report-abbr-comp-itm}}
+            </table>
+        </div>
+
+    </div>
+
+    {{> partials/document.title}}
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('body .wrapper .reports-type-4');
+
+            ClassSubM.filterType4({mB: mB});
+        })();
+    </script>
+</div>
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+

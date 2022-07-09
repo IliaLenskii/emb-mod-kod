@@ -1,0 +1,24 @@
+{{#each itms}}
+<tr>
+{{#if empty}}
+    <td colspan="14" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+{{else}}
+    <td class="num-puk __align_center">{{idx}}</td>
+    <td width="15%">{{{name}}}</td>
+    <td class="require-ments" width="5%">
+        <span class="s-name">{{user/executorName}}</span>
+    </td>
+    <td class="require-ments" width="5%">
+        <span class="s-department">{{user/org}}</span>
+    </td>
+    <td class="require-ments" width="5%">
+        <span class="s-department">{{user/department}}</span>
+    </td>
+    <td class="require-ments" width="5%">
+        <span class="s-department">{{user/phone}}</span>
+    </td>
+    <td class="date-create" width="7%">{{dateCreate}}</td>
+    {{#each guides}}<td width="7%">{{{length}}}</td>{{/each}}
+{{/if}}
+</tr>
+{{/each}}

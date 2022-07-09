@@ -1,0 +1,140 @@
+<form class="appoint-experts" name="appoint-experts" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="docs[]" value="{{nd}}" />
+    <div class="middle-dia-content fo-row step-0">
+        <div class="fo-row-name">{{i18n 'Definition of requirements and classification'}}</div>
+        <div class="fo-row-text">
+            <span class="s-name">{{step.0.executorName}}</span>
+            {{#if step.0.login2}}<span class="s-login2">({{step.0.login2}})</span>{{/if}}
+            <span class="s-department"><br />{{step.0.department}}</span>
+        </div>
+        <div class="fo-row-choice {{#if step.0.executorName}}choice-ok{{/if}}">
+            <input type="hidden" name="step[0][executorId]" value="{{step.0.executorId}}" />
+            <a href="javascript:;" class="select-expert"><span class="c-0">{{i18n 'Choose an expert'}}</span><span class="c-1">{{i18n 'Choose another expert'}}</span></a>
+        </div>
+    </div>
+
+    <div class="middle-dia-content fo-row step-1">
+        <div class="fo-row-name">{{i18n 'Harmonization of classification'}}</div>
+        <div class="fo-row-text">
+            <span class="s-name">{{step.1.executorName}}</span>
+            {{#if step.1.login2}}<span class="s-login2">({{step.1.login2}})</span>{{/if}}
+            <span class="s-department"><br />{{step.1.department}}</span>
+        </div>
+        <div class="fo-row-choice {{#if step.1.executorName}}choice-ok{{/if}}">
+            <input type="hidden" name="step[1][executorId]" value="{{step.1.executorId}}" />
+            <a href="javascript:;" class="select-expert"><span class="c-0">{{i18n 'Choose an expert'}}</span><span class="c-1">{{i18n 'Choose another expert'}}</span></a>
+        </div>
+    </div>
+
+    <div class="line-content form-btn-save-reset">
+        <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+        <button type="submit" class="btn" tabindex="2" disabled="disabled">{{i18n 'Save'}}</button>
+    </div>
+
+    {{> partials/users-file-list}}
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $(document.forms['appoint-experts']);
+
+            if(mB.length < 1)
+                return;
+            
+            var parentDialog = mB.data('parentDialog');
+            var parrDialog = parentDialog.parent();
+
+
+            $('button[type="submit"]', parentDialog).prop('disabled', false);
+
+            ClassSubM.appointExpertsForm({
+                form: mB
+            });
+
+
+            var usersList = $('.users-file-list', mB);
+                usersList.on('needHide', function(){
+                    var lh = $(this);
+                    
+                        lh.removeAttr('style');
+                        lh.removeData('workBlock');
+                });
+            
+            $('button.closeDialog', mB).click(function(){
+
+                parentDialog.dialog('close');
+            });
+            
+            var foRow = $('.fo-row', mB);
+                foRow.on('setZnac', function(e, data){
+                    var cun = $(this);
+                    var data = data || {};
+                    
+                    $('.fo-row-text', cun).html(data.text ? data.text : '');
+                    $('.fo-row-choice', cun).toggleClass('choice-ok', data.text ? true : false);
+
+                    $('input[type="hidden"]', cun).val(data.id ? data.id : '');
+                });
+            
+            $('.select-expert', mB).click(function(){
+                var a = $(this);
+                var parr = a.parents('.fo-row');
+
+                usersList.data('workBlock', parr);
+                usersList.fadeIn(200);
+            });
+
+            var closeClickA = $('.ui-dialog-titlebar a.closeDialog', parrDialog);
+                closeClickA.data('closeback', function(){
+                    
+                    var isVisb = usersList.is(':visible');
+                    
+                    if(isVisb) {
+
+                        usersList.trigger('needHide');
+                        return true;
+                    }
+                });
+            
+            
+            usersList.click(function(e){
+                var t = $(this);
+                var targ = $(e.target);
+                var workBlock = t.data('workBlock');
+
+                if(targ.is('span'))
+                    targ = targ.parent('a');
+
+                if(!workBlock)
+                    return false;
+
+                if(targ.hasClass('cur-itm')) {
+                    var id = targ.data('id');
+
+                    workBlock.trigger('setZnac', {
+                        id: id,
+                        text: targ.html()
+                    });
+                    
+                    usersList.trigger('needHide');
+                    
+                    return false;
+                }
+                
+                
+                return false;
+            });
+            
+
+            $('.users-file-list .clear-us', mB).click(function(){
+                var workBlock = usersList.data('workBlock');
+                
+                workBlock.trigger('setZnac');
+                usersList.trigger('needHide');
+            });
+        })();
+    </script>
+</form>

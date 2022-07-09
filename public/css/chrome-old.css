@@ -1,0 +1,47 @@
+/*
+ В предыдущих версиях хрома есть баг с отображением SVG на спрайте по ссылке на область просмотра
+*/
+
+.doc-list .doc-list-ul .doc-list-li.not-emt- {
+
+    background-image: url('../images/svg/parts/document-kod-icon.svg');
+} .doc-list .doc-list-ul .doc-list-li.not-emt-.m-alert-true {
+
+    background-image: url('../images/svg/parts/triangular-alert.svg');
+}
+
+.form-analysis .doc-analysis-stage-1 .in-l-demand ul a.there-are-classif {
+
+    background-image: url(../images/svg/parts/kod-icon-check.svg);
+}
+
+.form-analysis .different-document-attributes .annot-name {
+    background-image: url('../images/svg/parts/document-kod-icon.svg');
+}
+.header .header_top .header-top-left .history-home {
+    
+    background-image: url('../images/svg/parts/home-awesome.svg');
+}
+
+
+.list-docs-layouts .list-collections .itm-collections {
+    background-image: url('../images/svg/parts/folder-orange.svg');
+}
+.list-docs-layouts .list-collections .itm-collections.service-collect {
+    background-image: url('../images/svg/parts/folder-blue.svg');
+}
+.list-docs-layouts .list-collections .itm-collections.selected {
+    background-image: url('../images/svg/parts/folder-orange-opened.svg');
+}
+.list-docs-layouts .list-collections .itm-collections.service-collect.selected {
+    background-image: url('../images/svg/parts/folder-blue-opened.svg');
+}
+
+.classification-dialog.ui-dialog .ui-dialog-titlebar .closeDialog {
+    
+    background-image: url('../images/svg/parts/new-close.svg');
+}
+
+.doc-list .doc-list-tools-itm .additi-func ul + a {
+    background-image: url('../images/svg/parts/pyramid-down-0f6bac.svg');
+}

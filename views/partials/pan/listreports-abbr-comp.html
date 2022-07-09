@@ -1,0 +1,20 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on the list of abbreviations compare'}}
+    </div>
+    <div class="__margin-bottom_s __margin-top_xxxl">
+        <div class="__strong __inline-block">Не соответствуют словарю:</div>
+        <div class="__inline-block" id="abbr-comp_termsnd">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Отсутствуют в словаре:</div>
+        <div class="__inline-block" id="abbr-comp_termsn">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Возможные аббревиатуры:</div>
+        <div class="__inline-block" id="abbr-comp_abbr">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=abbr-comp&showreport=true" class="btn __gray_btn" id="abbr_href">Подробный отчет</a>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{{#each itms}}
+<tr>
+{{#if empty}}
+    <td colspan="3" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+{{else}}
+    <td class="num-puk __align_center">{{idx}}</td>
+    <td class="name-of-nd">{{{name}}}</td>
+    <td class="require-ments">
+        {{#each sliceText}}
+        <p class="req-p">{{partText}}
+        {{#if id}}<a href="javascript:;" class="show-demand" data-id-demand="{{id}}">{{i18n 'View full requirements'}}</a>{{/if}}
+        </p>
+        {{/each}}
+    </td>
+{{/if}}
+</tr>
+{{/each}}

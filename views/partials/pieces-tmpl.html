@@ -1,0 +1,58 @@
+<div class="pieces-tmpl">
+    <div class="global-spinner" data-spinner-id="" style="">
+        <div class="prd-icon-blk">
+            <div class="icon icon--ei-spinner-2 icon--l">
+                <div class="icon__spinner">
+                    <svg class="icon__cnt"><use xlink:href="#ei-spinner-2-icon"></use></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="doc-dragging-icon">
+        <div class="in-doc-icon">
+            <svg class="doc-icon" viewBox="0 0 24 30"><use xlink:href="#document-kod-icon" /></svg>
+        </div>
+        <div class="count-docs"></div>
+    </div>    
+
+    <div class="template-new-folder">
+        <form class="new-collections" method="post" enctype="multipart/form-data" action="{{siteConf 'url'}}add-remove-collections">
+            
+            <div class="middle-dia-content">
+                <input type="text" class="it" maxlength="40" data-minlength="3" name="name_collections" id="name_collections" data-required="1" data-pattern="^[a-zА-яЁё0-9_\-. ]{3,}$" tabindex="1" placeholder="{{i18n 'Folder name'}}" />
+            </div>
+            
+            <div class="line-content form-btn-save-reset">
+                <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+                <button type="submit" disabled="disabled" class="btn" tabindex="2">{{i18n 'Create a folder'}}</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="template-strange-form">
+        <form class="strange-form" autocomplete="off">
+            <div class="middle-dia-content">
+                <input type="text" class="it" maxlength="200" data-minlength="3" name="def-name" data-required="1" tabindex="1" placeholder="{{i18n 'Name-oth'}}" />
+                <div class="b-switcher-made" name="def-set" hidden>{{> partials/ready-made-switch}}</div>
+            </div>
+            <div class="line-content form-btn-save-reset">
+                <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+                <button type="submit" disabled="disabled" class="btn" tabindex="2">{{i18n 'Save'}}</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="template-view-mode">
+        <ul>
+            <li class="view-mode__item view-mode__item_active" data-mode="1">{{i18n 'Show-full-demand'}}</li>
+            <li class="view-mode__item" data-mode="2">{{i18n 'Show-only-demand-text'}}</li>
+        </ul>
+    </div>
+
+    <div class="template-ajax-error">
+        <div><svg class="ic-attention" viewBox="0 0 67 58"><use xlink:href="#token-of-attention" /></svg></div>
+        <div class="__margin-bottom_m error-title"></div>
+        <div class="__margin-bottom_xs __margin-top_xs error-desc"></div>
+    </div>
+</div>

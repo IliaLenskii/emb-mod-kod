@@ -1,0 +1,28 @@
+<div class="part-text-info middle-dia-content">
+    <div class="part-bln">{{i18n 'Name of ND'}}</div>
+    <div class="annot-name">{{{docName}}}</div>
+    <div class="part-bln">{{i18n 'Requirement'}}</div>
+    <div class="require-ments">{{{text}}}</div>
+    
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('.part-text-info');
+
+            if(mB.length < 1)
+                return;
+
+            var parentDialog = mB.data('parentDialog');
+            var dialogTitle = '{{dialogTitle}}';
+
+            if(!parentDialog)
+                return;
+
+            if(dialogTitle)
+                parentDialog.dialog('option', 'title', dialogTitle);
+        })();
+    </script>
+</div>

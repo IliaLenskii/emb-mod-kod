@@ -1,0 +1,11 @@
+{{#each colls}}
+<li class="colle-list-li">
+    {{#if empty}}
+        <div class="__align_center"><span>{{i18n 'empty'}}</span></div>
+    {{else}}
+        <a href="?id={{id}}" class="itm-collections {{cssClass}} {{selected}}" data-xhr-tabs="main-tabs" data-id-coll="{{id}}">
+            <span>{{{name}}}</span><span class="count-docs">({{docsLength}})</span>
+        </a>
+    {{/if}}
+</li>
+{{/each}}

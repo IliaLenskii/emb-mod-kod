@@ -1,0 +1,26 @@
+<div class="search-results-kod relat-height">
+
+    <div class="top-po-pp different-document-attributes">{{i18n 'Search the ND'}}{{#if searchQuery}}: &laquo;{{searchQuery}}&raquo;{{/if}}</div>
+
+    <div class="po-barnus">
+
+    {{#if searchError}}
+        <div class="search-dp-form">{{> partials/search-form-kod formid='ig6v'}}</div>
+    
+        <div class="search-results-message __use-select-none">
+            <p class="icon-s-s"><svg class="svg-icon " viewBox="0 0 50 50"><use xlink:href="#ei-search-icon" /></svg></p>
+            <p class="explanation-m">{{searchError}}</p>
+            <p class="what-to-do">{{i18n 'Please specify the wording of the request.'}}</p>
+        </div>
+    {{/if}}
+
+    {{#if docs}}
+        {{> partials/list-docs}}
+    {{/if}}
+
+    </div>
+
+    {{> partials/document.title}}
+
+</div>
+

@@ -1,0 +1,22 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on terms and definitions'}}
+    </div>
+    <div class="__margin-bottom_s __margin-top_xxl">
+        <div class="__strong __inline-block">Не соответствуют словарю:</div>
+        <div class="__inline-block" id="terms_termsnd">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Отсутствуют в словаре:</div>
+        <div class="__inline-block" id="terms_termsn">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s hidden">
+        <span class="__strong">Отсутствуют в разделе "Термины и
+            определения":
+        </span>
+        <div class="__inline-block" id="terms_termsnto">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=terms&showreport=true" class="btn __gray_btn" id="abbr_href">Подробный отчет</a>
+    </div>
+</div>

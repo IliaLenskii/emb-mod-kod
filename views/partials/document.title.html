@@ -1,0 +1,24 @@
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="{{{originalUrl}}}"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+    
+    .wrapper .main-cnt a[href|="{{{originalUrl}}}"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+
+{{#if xhr}}
+<script>
+(function(){
+    if(!$ || !window.ClassSubM)
+        return;
+    
+    ClassSubM.setDocumentTitle('{{{makeTitle title}}}');
+    ClassSubM.showHideTopMenu('{{hideTopMenu}}');
+})();
+</script>
+{{/if}}

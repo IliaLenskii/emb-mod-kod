@@ -1,0 +1,14 @@
+{{#each itms}}
+<tr>
+    {{#if empty}}
+    <td colspan="3" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+    {{else}}
+    <td class="num-puk __align_center">{{math @index '+' 1}}</td>
+    <td class="require-ments" width="15%">{{{title}}}</td>
+    <td class="require-ments" width="35%"><a href="{{link}}/?nd={{nd}}" class="__simple">{{name}}</a></td>
+    <td class="require-ments" width="10%">{{{count}}}</td>
+    <!--<td class="require-ments" width="8%">{{status}}</td>-->
+    <td class="require-ments" width="35%"><a href="{{link}}/?nd={{replacedByNd}}" class="__simple">&nbsp;{{replacedByName}}</a></td>
+    {{/if}}
+</tr>
+{{/each}}

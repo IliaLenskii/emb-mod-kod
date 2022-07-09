@@ -1,0 +1,27 @@
+<div class="ready-made relat-height">
+    <div class="top-po-pp"></div>
+
+    <div class="po-barnus">
+        <div class="two-columns">
+            <div class="ready-made-bl">
+                <a href="javascript:;" class="add-made">{{i18n 'Add a set'}}</a>
+                <a href="javascript:;" class="remove-made">{{i18n 'Delete set'}}</a>
+            </div>
+        </div>
+        {{> partials/lists/ready-made}}
+    </div>
+
+    {{> partials/document.title}}
+    
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+            
+            var mB = $('body .wrapper .ready-made');
+
+            ClassSubM.addMade({mB: mB});
+        })();
+    </script>
+</div>

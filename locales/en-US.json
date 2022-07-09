@@ -1,0 +1,47 @@
+{
+    "serviceName": "Подсистема классификации ИСУНД АСУТП",
+    "serviceNameLite": "Подсистема классификации",
+    "meta-description": "Подсистема классификации предназначена для экспертной оценки конкретных пунктов НД.",
+    "meta-keywords": "кодекс, техэксперт, документ, анализ, право, закон",
+    "Old browser": "Ваш браузер устарел!",
+    "main-page": "Перейти на Главную",
+    "ARM-devr-nor-doc": "АРМ разработчика нормативной документации",
+    "goto-kodeks": "Перейти на Кодекс",
+    "goto-techexpert": "Перейти на Техэксперт",
+    "name-transneft": "Транснефть",
+    "site-transneft": "https://www.transneft.ru/",
+    "site-cntd": "http://www.cntd.ru/",
+    "site-kodeks": "http://www.kodeks.ru/",
+    
+    "error": {},
+    "HTTPErrors": {
+        "404": {
+            "title": "Страница не найдена",
+            "description": "Её кто-то съел"
+        },
+        "500": {
+            "title": "Ошибка исполнения",
+            "description": "Страница плохо себя ведёт. Плохая страница"
+        }
+    },
+
+    "Documents for classification": {
+        "s": "ДК",
+        "b": "Документы для классификации"
+    },
+    "Comparison of classifications": {
+        "s": "СК",
+        "b": "Сравнение классификаций"
+    },
+    "Comparative report": {
+        "s": "СО",
+        "b": "Сравнительный отчёт"
+    },
+    "Classifications": {
+        "s": "Классиф",
+        "b": "Классификаторы"
+    },
+    "list-docs": {
+        "title": "Документы для классификации"
+    }
+}

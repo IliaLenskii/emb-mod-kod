@@ -1,0 +1,12 @@
+{{#each itms}}
+<tr>
+    {{#if empty}}
+    <td colspan="3" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+    {{else}}
+    <td class="num-puk __align_center">{{math @index '+' 1}}</td>
+    <td class="require-ments" width="45%">{{{title}}}</td>
+    <td class="require-ments" width="45%"><a href="{{link}}/?nd={{nd}}" class="__simple">&nbsp;{{name}}</a></td>
+    <!--Ссылочный документ отсутствует в БФ ИСУНД АСУТП-->
+    {{/if}}
+</tr>
+{{/each}}

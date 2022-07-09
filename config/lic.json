@@ -1,0 +1,66 @@
+{
+    "run the plugin": {
+        "nd": 333101000,
+        "name": "Подсистема классификации НД"
+    },
+    "admin": {
+        "nd": 333101101,
+        "name": "Администратор (общее администрирование)",
+        "priority": 10
+    },
+    "creator": {
+        "nd": 333101102,
+        "name": "Разработчик (права Эксперта + изменение значений классификаторов)",
+        "priority": 11
+    },
+    "expert-pao": {
+        "nd": 333101103,
+        "name": "Эксперт (ПАО)",
+        "priority": 12
+    },
+    "expert-nii": {
+        "nd": 333101105,
+        "name": "Эксперт (НИИ)",
+        "priority": 13
+    },
+    "reports": {
+        "nd": 333101104,
+        "name": "Наблюдатель (пользователь с правами чтения)",
+        "priority": 15
+    },
+
+    "limitedAccess": {
+        "/attribute-search": {
+            "methods": ["GET"],
+            "groups": ["admin"]
+        },
+        "/classifiers/edit-classifier": {
+            "methods": ["GET"],
+            "groups": ["admin"]
+        },
+        "/search-results-kod": {
+            "methods": ["GET"],
+            "groups": ["admin"]
+        },
+        "/users-list": {
+            "methods": ["GET"],
+            "groups": ["admin"]
+        },
+        "/doc": {
+            "methods": ["GET"],
+            "groups": ["admin", "expert-pao", "expert-nii"]
+        },
+        "/doc/submit-classification": {
+            "methods": ["POST"],
+            "groups": ["admin", "expert-pao", "expert-nii"]
+        },
+        "/doc/demand-into-parts": {
+            "methods": ["POST"],
+            "groups": ["admin", "expert-pao", "expert-nii"]
+        },
+        "/doc/result-paragraph-check": {
+            "methods": ["POST"],
+            "groups": ["admin", "expert-pao", "expert-nii"]
+        }
+    }
+}

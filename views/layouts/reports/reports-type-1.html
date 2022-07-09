@@ -1,0 +1,56 @@
+<div class="reports-type-1 reports-page relat-height">
+    <h2 class="__header-blue">{{{title}}}</h2>
+    <h3>{{i18n 'Report on the stages of classification1'}}</h3>
+
+    <div class="po-barnus">
+        {{> partials/reports/reports-table-filter}}
+
+        <table class="table-head-m  __use-select-none">
+            <tr>
+                <th class="num-puk">{{i18n '#p/p'}}</th>
+                <th class="name-of-nd" width="45%">{{i18n 'Name of ND'}}</th>
+                <th width="10%">{{i18n 'Name of Expert'}}</th>
+                <th width="10%">{{i18n 'Report Organization'}}</th>
+                <th width="10%">{{i18n 'Report Department'}}</th>
+                <th width="10%">{{i18n 'Report Phone'}}</th>
+                <th width="10%" class="stage-n">{{i18n 'Classification stage'}}</th>
+            </tr>
+        </table>
+
+        <div class="scr-table">
+            <table class="table-report table table-bordered">
+                {{> partials/reports/reports-type-1-itm}}
+            </table>
+        </div>
+
+    </div>
+
+    {{> partials/document.title}}
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('body .wrapper .reports-type-1');
+            
+            ClassSubM.filterType1({mB: mB});
+        })();
+    </script>
+</div>
+
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+
+

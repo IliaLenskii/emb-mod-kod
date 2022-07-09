@@ -1,0 +1,31 @@
+<div class="classifiers-layouts relat-height">
+
+    <div class="top-po-pp">
+        {{#if (accessHidden 'admin')}}
+        <a href="{{siteConf 'url'}}classifiers/edit-classifier/" class="u-edit-cls" data-xhr-tabs="main-tabs" >{{i18n 'Edit classifier'}}</a>
+        {{/if}}
+    </div>
+
+    <div class="po-barnus">
+        <div class="list-all-classificators">
+            {{#each arrTrees}}<div class="parent-blk-classificators">{{{this}}}</div>{{/each}}
+        </div>
+    </div>
+
+    {{> partials/document.title}}
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+            
+            var mB = $('body .wrapper .classifiers-layouts');
+
+            ClassSubM.classifierItemsWork({
+                'context': $('.parent-blk-classificators', mB)
+            });
+
+        })();
+    </script>
+</div>

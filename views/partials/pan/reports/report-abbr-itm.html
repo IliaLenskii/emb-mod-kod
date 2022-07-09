@@ -1,0 +1,11 @@
+{{#each itms}}
+<tr>
+    {{#if empty}}
+    <td colspan="3" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+    {{else}}
+    <td class="num-puk __align_center" >{{math @index '+' 1}}</td>
+    <td class="require-ments" style="width: 65%;">{{{title}}}</td>
+    <td class="require-ments" style="width: 30%;">{{acronym}}</td>
+    {{/if}}
+</tr>
+{{/each}}

@@ -1,0 +1,25 @@
+<div class="w-column-r doc-analysis-stage-2 blk-spec animated faster __relative">
+    
+    <form name="save-current-classif" method="post" enctype="multipart/form-data" autocomplete="off" action="result-paragraph-check">
+        <input type="hidden" name="parcheck" value="1" />
+        <input type="hidden" name="nd" value="{{doc.nd}}" />
+        <input type="hidden" name="id" value="{{doc.id}}" />
+        <input type="hidden" name="id_demand" data-can-clear="1" data-required="1" />
+
+        {{#each arrTrees}}
+        <div class="parent-blk-classificators animated faster">
+            <a href="javascript:;" class="close-elbl st-11-cl" title="{{i18n 'Close'}}"></a>
+            {{{this}}}
+            <div class="only-choose-classif"></div>
+        </div>
+        {{/each}}
+
+        {{> partials/ready-made-set-values}}
+
+        <div class="class-save-point">
+            <button type="submit" class="btn" disabled="disabled" data-can-clear="1">{{i18n 'Save'}}</button>
+        </div>
+    </form>
+</div>
+
+<div class="w-column-r select-nn-req __use-select-none">{{i18n 'Select the requirement for classification'}}</div>

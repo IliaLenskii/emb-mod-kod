@@ -1,0 +1,37 @@
+{
+    "Add-docs-analisys": {
+        "method": "post",
+        "link": "add-docs-analysis",
+        "_comment": "Назначение экспертов"
+    },
+
+    "User-action": {
+        "_comment": "Активность пользователя"
+    },
+
+    "Start-classification": {
+        "_comment": "Начало классификации"
+    },
+
+    "Transfer-on-coordination": {
+        "_comment": "Передача на согласование"
+    },
+
+    "Classification-coordination": {
+        "_comment": "Согласование классификации"
+    },
+
+    "Report-generation": {
+        "_comment": "Формирование отчета"
+    },
+
+    "Save-to-file": {
+        "_comment": "Сохранить в файл"
+    },
+
+    "Search-event": {
+        "link": "search-results-kod",
+        "method": "post",
+        "_comment": "Поиск"
+    }
+}

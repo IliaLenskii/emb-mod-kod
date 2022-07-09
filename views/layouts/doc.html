@@ -1,0 +1,83 @@
+<div class="form-analysis relat-height">
+
+    <div class="top-po-pp different-document-attributes">
+        <div class="emul-tabl">
+            <div class="cell an-n"><div class="annot-name">{{{doc.nameShort}}}</div></div>
+            <div class="cell add-it">{{> partials/doc-addit-func}}</div>
+        </div>
+    </div>
+
+    <div class="po-barnus form-analysis-work-blocks typestep-{{currTypeStep}} editing-{{editing}}x matching-{{matching}}x">
+
+        <div class="form-analysis-text-doc make-demand cols-of-text __use-select-none"></div>
+
+        <div class="form-analysis-tools-analysis __use-select-none">
+
+            <ul class="tabs mode-tabs">
+                <li class="tabs_i">
+                    <a href="javascript:;" class="intab-a first-click" data-open="mode-broom">{{i18n 'Sets (classif)'}}</a>
+                </li>
+                <li class="tabs_i">
+                    <a href="javascript:;" class="intab-a" data-open="mode-text">{{i18n 'Requirements (classif)'}}</a>
+                    <span class="coco">{{demandsCounClassif}}</span>
+                </li>
+                
+                <li class="tabs_i eye-text">
+                    <div class="view-mode">
+                        <div class="view-mode__icon"></div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="mode-o-text" data-tab="mode-text">
+                {{> partials/doc-analysis-stage-1}}
+
+                {{#if editing}}
+                {{> partials/doc-analysis-stage-2-editing}}
+                {{else}}
+                {{> partials/doc-analysis-stage-2}}
+                {{/if}}
+            </div>
+
+            <div class="mode-o-broom" data-tab="mode-broom">
+                {{> partials/doc-analysis-mode-broom}}
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .wrapper .scroll_cnt .container {
+            max-width: 124em;
+        }
+    </style>
+
+    <script>
+    (function(){
+
+        if(!window.$ || !window.ClassSubM)
+            return;
+
+        var mB = $('body .wrapper .form-analysis');
+
+        ClassSubM.workTextDoc({
+            mB: mB,
+            editing: '{{editing}}',
+            btnPaoDis: '{{btnPaoDis}}'
+        });
+        
+        ClassSubM.broomMode({
+            mB: mB,
+            editing: '{{editing}}'
+        });
+        
+        ClassSubM.kdocViewer({
+            target: $('.form-analysis-text-doc', mB).get(0),
+            nd: '{{doc.nd}}'
+        });
+
+    })();
+    </script>
+    
+    {{> partials/document.title}}
+</div>
+

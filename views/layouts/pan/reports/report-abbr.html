@@ -1,0 +1,50 @@
+<div class="reports-type-4 reports-page relat-height">
+    <h2 class="__header-blue">{{{title}}}</h2>
+
+    <div class="po-barnus">
+        <h3>{{i18n 'Report on the list of abbreviations'}}</h3>
+        {{> partials/reports/reports-table-filter}}
+
+        <table class="table-head-m  __use-select-none">
+            <tr>
+                <th class="num-puk">{{i18n '#p/p'}}</th>
+                <th class="require-ments" width="65%">Раздел (пункт оглавления)</th>
+                <th class="require-ments" width="30%">Потенциальная аббревиатура или сокращение</th>
+            </tr>
+        </table>
+
+        <div class="scr-table">
+            <table class="table-report table table-bordered">
+                {{> partials/pan/reports/report-abbr-itm}}
+            </table>
+        </div>
+
+    </div>
+
+    {{> partials/document.title}}
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('body .wrapper .reports-type-4');
+
+            ClassSubM.filterType4({mB: mB});
+        })();
+    </script>
+</div>
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+

@@ -1,0 +1,24 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on the stages of classification1'}}
+    </div>
+    <div class="__margin-top_xl __margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Stage-Completed'}}</div>
+        <div class="__inline-block" id="type-1_completed">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Stage-Not started'}}</div>
+        <div class="__inline-block" id="type-1_not-started">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'Stage-During'}}</div>
+        <div class="__inline-block" id="type-1_during">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">{{i18n 'On agreement'}}</div>
+        <div class="__inline-block" id="type-1_agreement">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" id="type-1_link" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=type-1&showreport=true" class="btn __gray_btn" id="abbr_href">Подробный отчет</a>
+    </div>
+</div>

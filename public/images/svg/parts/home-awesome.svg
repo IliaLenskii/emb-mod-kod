@@ -1,0 +1,9 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.23" height="23.23">
+    <symbol id="home-awesome" viewBox="0 0 480 480">
+        <g>
+            <polygon points="448,288 256,64 64,288 112,288 112,448 208,448 208,320 304,320 304,448 400,448 400,288" />
+        </g>
+    </symbol>
+
+    <use xlink:href="#home-awesome" viewBox="0 0 23.23 23.23" fill="#fff" ></use>
+</svg>

@@ -1,0 +1,19 @@
+{{#each itms}}
+<tr>
+    {{#if empty}}
+    <td colspan="4" class="table-empt __use-select-none">{{{i18n 'While there is no suitable docu1'}}}</td>
+    {{else}}
+    <td class="num-puk __align_center">{{math i '+' 1}}</td>
+    <td class="require-ments" width="10%">{{title}}</td>
+    <td class="require-ments" width="20%">{{definition}}</td>
+    <td class="require-ments" width="30%">{{dictionaryDefinition}}</td>
+    <td class="require-ments" width="30%">
+        {{#each sources}}
+            <a href="{{link}}/?nd={{nd}}" class="__simple">{{name}}</a><br/>
+        {{/each}}
+    </td>
+
+    <!--Ссылочный документ отсутствует в БФ ИСУНД АСУТП-->
+    {{/if}}
+</tr>
+{{/each}}

@@ -1,0 +1,9 @@
+{{#each readyMade}}
+<li class="{{empty}}is-1">
+    {{#if empty}}
+        <span>{{{i18n 'No collection yet'}}}</span>
+    {{else}}
+        <a href="javascript:;" data-made-id="{{id}}" class="made-itm">{{name}}</a>
+    {{/if}}
+</li>
+{{/each}}

@@ -1,0 +1,9 @@
+{{#each demands}}
+<li class="{{empty}}is-1">
+    {{#if empty}}
+        <span>{{#if editing}}{{{i18n 'So far no claims have been formed1'}}}{{else}}{{i18n 'So far no claims have been formed-noedit'}}{{/if}}</span>
+    {{else}}
+        <a href="javascript:;" data-id-demand="{{id}}" data-pid-demand="{{strPids}}" class="{{thereAreClassif}}" title="{{tooltip}}">{{name}}</a>
+    {{/if}}
+</li>
+{{/each}}

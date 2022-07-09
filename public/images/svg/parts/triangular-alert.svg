@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19">
+    <symbol id="triangular-alert" viewBox="0 0 21 19">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <polygon points="0.0583641625 18.0965412 9.92406806 0.171759808 20.2818522 18.0965412"></polygon>
+            <rect fill="#FFFFFF" x="9" y="7" width="2" height="5"></rect>
+            <rect fill="#FFFFFF" x="9" y="14" width="2" height="2"></rect>
+        </g>
+    </symbol>
+
+    <use xlink:href="#triangular-alert" fill="#FFA000" viewBox="0 0 21 19"></use>
+</svg>

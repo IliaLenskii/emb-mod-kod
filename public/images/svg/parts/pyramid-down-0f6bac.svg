@@ -1,0 +1,7 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9.863" height="4.933">
+    <symbol id="pyramid-down" viewBox="0 0 9.863 4.933">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.863 0l-4.93 4.933L0 0h9.863z"/>
+    </symbol>
+
+    <use xlink:href="#pyramid-down" fill="#0f6bac" viewBox="0 0 9.863 4.933"></use>
+</svg>

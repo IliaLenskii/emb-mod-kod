@@ -1,0 +1,18 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        Отчет о наличии в НД/проекте НД ссылок на отмененные НД
+    </div>
+    <div class="__strong __inline-block __color-red __margin-bottom_s __margin-top_l" id="disablednd_actual"></div>
+
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Ссылок на действующие документы:</div>
+        <div class="__inline-block" id="disablednd_actlinks">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Ссылок на неактуальные документы:</div>
+        <div class="__inline-block" id="disablednd_dislinks">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=disablednd&showreport=true" class="btn __gray_btn" id="disablednd_href">Подробный отчет</a>
+    </div>
+</div>

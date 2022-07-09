@@ -1,0 +1,50 @@
+<div class="reports-type-3-filter filter-t-3-4 __use-select-none">
+
+    <form name="reports-type-3-filter" method="post" enctype="multipart/form-data" action="{{siteConf 'url'}}reports/reports-type-3-filter">
+
+        <div class="middle-dia-content __relative">
+
+            <div class="fi-list-docs">{{#if docs}}{{> partials/list-docs}}{{/if}}</div>
+
+            <div class="fi-classificators blk-spec">
+                <div class="stage-name">{{i18n 'Requirements corresponding to classifiers'}}</div>
+                
+                    <div class="scroll-cls">
+                        {{#each arrTrees}}
+                        <div class="parent-blk-classificators animated faster">
+                            <a href="javascript:;" class="close-elbl st-11-cl" title="{{i18n 'Close'}}"></a>
+                            {{{this}}}
+                            <div class="only-choose-classif"></div>
+                        </div>
+                        {{/each}}
+                    </div>
+            </div>
+        </div>
+        
+        <div class="empty-result">
+            <div class="mess">{{i18n 'Could not find the matching documents'}}</div>
+            <a href="javascript:;" class="em-re-continue">{{i18n 'Continue'}}</a>
+        </div>
+
+        <div class="line-content form-btn-save-reset">
+            <button type="reset" class="btn __default closeDialog marg-right" tabindex="99">{{i18n 'Cancel'}}</button>
+            <button type="submit" disabled="disabled" class="btn" tabindex="2">{{i18n 'Filter'}}</button>
+        </div>
+    </form>
+    
+    <script>
+        (function(){
+
+            if(!window.$ || !window.ClassSubM)
+                return;
+
+            var mB = $('.reports-type-3-filter');
+
+            if(mB.length < 1)
+                return;
+            
+            ClassSubM.workFilterType3({mB: mB});
+
+        })();
+    </script>
+</div>

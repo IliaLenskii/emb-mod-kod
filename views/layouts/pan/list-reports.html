@@ -1,0 +1,115 @@
+{{#if originalUrl}}
+<style>
+    .wrapper .main-cnt a[href|="/classification/pan/"] {
+        border-color: #d0d0d0;
+        color: #2c2c2c;
+    }
+
+    .wrapper .main-cnt a[href|="/classification/pan/"]:after {
+        background-color: #fff;
+    }
+</style>
+{{/if}}
+
+
+<div class="classifiers-layouts relat-height analytics-reports">
+    <br/>
+    <div class="__block">
+        <h2 class="__header-blue __padding-right_xxxxl">{{> partials/document.title}}
+            {{{title}}}
+        </h2>
+        <div class="discuss_option __hidden">
+            <a href="#" class="discuss_option_lk lst_open __js-open-discuss_option __inline-block">Дополнительные функции <span class="ic-down option_i"></span></a>
+            <ul class="lst lst_modal __discuss_option  __js-discuss_option hidden">
+                <li class="lst_i lst_modal_i __no-hover"><a href="" class="lst_modal_i_lk">Редактировать информацию</a></li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="__border-top">
+        <div class="row">
+                        {{#each reports}}
+                            {{#if (math (math @index '%' 2) '==' 0)}}
+                                {{#if (ifCond @index '>' 0)}}
+                                    </div><!--col-sm3-->
+                                {{/if}}
+                                <div class="col-sm-3">
+                            {{/if}}
+                            {{#if (math this.name '==' 'disablednd')}}
+                                {{> partials/pan/listreports-disablednd }}
+                            {{/if}}
+                            {{#if (math this.name '==' 'normative')}}
+                                {{> partials/pan/listreports-normative}}
+                            {{/if}}
+                            {{#if (math this.name '==' 'terms')}}
+                                {{> partials/pan/listreports-terms}}
+                            {{/if}}
+                            {{#if (math this.name '==' 'wishes')}}
+                                {{> partials/pan/listreports-wishes}}
+                            {{/if}}
+                            {{#if (math this.name '==' 'abbr')}}
+                                {{> partials/pan/listreports-abbr}}
+                            {{/if}}
+                                    {{#if (math this.name '==' 'abbr-comp')}}
+                                    {{> partials/pan/listreports-abbr-comp}}
+                                    {{/if}}
+                            {{#if (math this.name '==' 'type-1')}}
+                                {{> partials/pan/listreports-type-1}}
+                            {{/if}}
+                            {{#if (math this.name '==' 'type-2')}}
+                                {{> partials/pan/listreports-type-2}}
+                            {{/if}}
+                            {{#if (math this.name '==' 'type-3')}}
+                            {{> partials/pan/listreports-type-3}}
+                            {{/if}}
+                        {{/each}}
+                        </div><!--col-sm3-->
+        </div>
+
+        <script>
+            (function(){
+
+                if(!window.$ || !window.ClassSubM)
+                    return;
+
+                var mB = $('body .wrapper .analytics-reports');
+
+                ClassSubM.nigger({
+                    mB: mB,
+                    nd: '{{nd}}',
+                    reports: '{{strreports}}'
+                });
+
+            })();
+        </script>
+
+    </div>
+</div>
+
+<!--
+<div class="pan-1 relat-height">
+
+    <div class="top-po-pp">
+        
+    </div>
+
+    <div class="po-barnus">
+        
+        Вот оно что...
+
+
+    </div>
+
+    <script>
+    (function(){
+
+        if(!$ || !window.ClassSubM)
+            return;
+
+    })();
+    </script>
+
+    {{> partials/document.title}}
+</div>
+
+-->

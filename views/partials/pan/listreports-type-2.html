@@ -1,0 +1,14 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        {{i18n 'Report on classified ND / ND projects'}}
+    </div>
+
+    <div class="__margin-bottom_s __margin-top_l">
+        <div class="__strong __inline-block">{{i18n 'Total number of claims'}}</div>
+        <div class="__inline-block" id="type-2_cnt">{{> partials/pan/spinner}}</div>
+    </div>
+
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" id="type-2_link" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=type-2&showreport=true" class="btn __gray_btn" id="type-2_href">Подробный отчет</a>
+    </div>
+</div>

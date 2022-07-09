@@ -1,0 +1,16 @@
+<div class="doc-list-empty __use-select-none">
+ 
+    <div class="empty-folder user-folders-empty">
+        <div class="em-fol-icon">
+            <svg class="folder-none-document" viewBox="0 0 256 256"><use xlink:href="#folder-none-document" /></svg>
+        </div>
+        <div class="em-fol-text to-gg">{{i18n 'No documents to classify'}}</div>
+        
+        {{#if (accessHidden 'admin')}}
+        <div class="em-fol-text">{{i18n 'To select the documents, use...'}}</div>
+        <div class="em-fol-text">
+            <a href="{{siteConf 'url'}}attribute-search" class="btn fu-1" data-xhr-tabs="main-tabs">{{i18n 'Find the ND in the ISUND ASUTP'}}</a>
+        </div>
+        {{/if}}
+    </div>
+</div>

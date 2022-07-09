@@ -1,0 +1,79 @@
+<div class="list-docs-layouts relat-height">
+    <div class="top-po-pp"></div>
+
+    <div class="po-barnus">
+
+        <div class="two-columns doc-collections">
+
+            {{#if (accessHidden 'admin')}}
+            <div class="attr-go-sear">
+                <a href="{{siteConf 'url'}}attribute-search" class="btn" data-xhr-tabs="main-tabs">{{i18n 'Find the ND in the ISUND ASUTP'}}</a>
+            </div>
+            {{/if}}
+
+            {{#if colls}}
+            {{> partials/list-collections}}
+            {{/if}}
+
+            <div class="blk-add-rem-folder">
+                <a href="javascript:;" class="add-folder">{{i18n 'Create a new folder'}}</a>
+                {{#if isRemove}}<a href="javascript:;" class="remove-folder">{{i18n 'Delete the current folder'}}</a>{{/if}}
+            </div>
+
+            <div class="ready-made-bl">
+                <a href="{{siteConf 'url'}}ready-made/" class="ready-made-page" data-xhr-tabs="main-tabs">{{{i18n 'Saved sets of classifier values' '<br />'}}}</a>
+            </div>
+        </div>
+
+        {{#if docs}}
+        {{> partials/list-docs}}
+        {{else}}
+        {{> partials/list-docs-empty}}
+        {{/if}}
+
+    </div>
+    
+    {{> partials/document.title}}
+    
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+            
+            var mB = $('body .wrapper .list-docs-layouts');
+            
+            $('.blk-add-rem-folder .add-folder', mB).click(function(event){
+
+                event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+
+                ClassSubM.newFolderDialog({
+                    insertNode: $('.in-l-collections .list-collections', mB),
+                    title: "{{i18n 'New folder'}}"
+                });
+
+                return false;
+            });
+
+            ClassSubM.docDraggableDroppable({
+                el: mB
+            });
+
+            var scroll = $('.doc-collections .list-collections', mB);
+                scroll.scrollTo('.no-service-collect.selected');
+
+
+            $('.blk-add-rem-folder .remove-folder', mB).click(function(event){
+                var etEl = $(this);
+                var objDelIt = $('.in-l-collections .no-service-collect.selected', mB);
+                var dataId = objDelIt.data('id-coll');
+                
+                if((objDelIt.length < 1) || (!dataId))
+                    return;
+
+                ClassSubM.removeCollections({id: dataId});
+            });
+
+        })();
+    </script>
+</div>

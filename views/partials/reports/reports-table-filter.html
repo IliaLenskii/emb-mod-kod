@@ -1,0 +1,30 @@
+<div class="doc-list __use-select-none" data-list-id="">
+    <div class="doc-list-head">
+        <div class="docs-count">{{#if docsCount}}{{i18n 'material'}}:&nbsp;{{docsCount}} {{/if}}</div>
+
+        {{#if docsCount}}
+        <div class="right-icons">
+            <a class="excel-2013-icon" href="{{exportExcel}}">{{i18n 'Save to Excel'}}</a>
+            <!--<a class="filter-icon" href="javascript:;" data-url-filter="{{urlFilter}}">{{i18n 'Filter'}}</a>-->
+        </div>
+        {{/if}}
+    </div>
+
+    <script>
+        (function(){
+
+            if(!window.$ || !window.ClassSubM)
+                return;
+
+            var mB = $('.doc-list[data-list-id]');
+
+            if(mB.length < 1)
+                return;
+
+            var filterIcon = $('.filter-icon[data-url-filter]', mB);
+
+            ClassSubM.autoLoadDialogFilter({el: filterIcon});
+
+        })();
+    </script>
+</div>

@@ -1,0 +1,22 @@
+{{#if access/creator}}<a href="javascript:;" class="pids-to-text"><svg><use xlink:href="#ei-retweet-icon"></use></svg></a>{{/if}}
+
+{{#if (ifCond editing '||' matching)}}
+<div class="pod-dem-blk-formm">
+    <form name="submit-classification" method="post" enctype="multipart/form-data" autocomplete="off" action="submit-classification">
+        <input type="hidden" name="nd" value="{{doc.nd}}" />
+        <input type="hidden" name="id" value="{{doc.id}}" />
+        <input type="hidden" name="typestep" value="{{currTypeStep}}" />
+        <input type="hidden" name="back" />
+
+        <button type="submit" data-s="{{currTypeStep}}" class="btn but-su {{greenBtn}}" disabled>
+            <span class="step-1">{{i18n 'Submit for approval'}}</span>
+            <span class="step-2">{{i18n 'Reconcile classification'}}</span>
+            <span class="step-99">{{i18n 'Reconcile the approval'}}</span>
+        </button>
+
+        {{#if (ifCond currTypeStep '==' 2)}}
+        <button type="button" class="btn return-to-classif" title="{{i18n 'Return to classification'}}">&larr;</button>
+        {{/if}}
+    </form>
+</div>
+{{/if}}

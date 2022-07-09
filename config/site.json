@@ -1,0 +1,71 @@
+{
+    "author": "http://dpt.kodeks.ru/"
+    ,"authorEmail": "i-sector@kodeks.ru"
+    ,"favicon": "favicon.ico"
+    ,"jQueryOld": "jquery-1.12.3.min.js"
+    ,"jQueryNorm": "jquery-3.2.1.min.js"
+    
+    ,"secretKeyCookie": ""
+    ,"secretKeySession": ""
+    ,"sessionTimeout": 900000
+
+    ,"editClassifierAuth": {
+        "system_code": "kodweb"
+        ,"system_key": ""
+        ,"url": "%remarksSubsystem%/exchange/classif_auth"
+    }
+
+    ,"db": {
+        "mongodb": {
+            "host": "127.0.0.1"
+            ,"port": 27017
+            ,"database": "classification"
+            ,"opts": {
+                "user": null
+                ,"pass": null
+                ,"useMongoClient": true
+                ,"server": {
+                    "auto_reconnect": false
+                    ,"socketOptions": {
+                        "keepAlive": 1000
+                    }
+                }
+            }
+        }
+        ,"pg": {
+            "host": "127.0.0.1"
+            ,"port": 5432
+            ,"user": null
+            ,"password": null
+            ,"database": "action_statistics"
+            ,"max": 10
+        }
+        ,"servers": {
+            "remarksSubsystem": {
+                "host": "vdc01-perndkt01.kodeks.ru"
+            }
+        }
+    }
+    
+    ,"routes": {
+        "user-events": {
+            "freeAccess": true
+        }
+    }
+
+    ,"requests": {
+        "getClassifiers": {
+            "host": "%remarksSubsystem%",
+            "path": "/getclassif"
+        },
+        "usersShort": {
+            "host": "%remarksSubsystem%",
+            "path": "/actions_statistics/users_short"
+        },
+        "analytics": {
+            "host": "host",
+            "path": "something",
+            "port": "port"
+        }
+    }
+}

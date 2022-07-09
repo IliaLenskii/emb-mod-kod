@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9, IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-language" CONTENT="ru-RU" />
+    <meta name="Robots" CONTENT="none" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    <meta name="description" content="{{i18n 'meta-description'}}" />
+    <meta name="keywords" content="{{i18n 'meta-keywords'}}" />
+    <meta name="author" content="{{siteConf 'author'}}" />
+    <meta name="contact" content="{{siteConf 'authorEmail'}}" />
+
+    <meta property="og:title" content="{{makeTitle title}}" />
+    <meta property="og:description" content="{{i18n 'meta-description'}}" />
+    <meta property="og:image" content="images/og-image-w758-h504.jpg" />
+    <meta property="og:image:width" content="758" />
+    <meta property="og:image:height" content="504" />
+
+    <link rel="canonical" href="" />
+
+    <link rel="shortcup icon" href="{{siteConf 'url'}}{{siteConf 'favicon'}}" />
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/lib/evil-icons.min.css" />
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/classification.css?v={{packageVal 'version'}}" />
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/header.css?v={{packageVal 'version'}}" />
+
+    {{#if chromeOld}}
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/chrome-old.css?v={{packageVal 'version'}}" />
+    {{/if}}
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/css/base.css" />
+    <!--<link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/css/icons.css" />-->
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/components.css">
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/project.css" />
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/jquery.webui-popover.min.css" />
+
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/lib/custom/grid.css" />
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}css/analytics.css?v={{packageVal 'version'}}" />
+    
+    <link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/lib/animate.css?v=3.7.0" />
+
+
+    <link rel="stylesheet" href="{{siteConf 'url'}}base/stylesheets/lib/custom/fonts.css" />
+
+    <script type="text/javascript" src="{{siteConf 'url'}}js/jquery/{{getOldjQuery userAgentName userAgentVersion}}"></script>
+    <script type="text/javascript" src="{{siteConf 'url'}}js/jquery/plugins/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{siteConf 'url'}}js/jquery/plugins/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="{{siteConf 'url'}}js/jquery/plugins/jquery.webui-popover.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" href="{{siteConf 'url'}}js/jquery/plugins/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" href="{{siteConf 'url'}}js/jquery/plugins/jquery-ui.theme.min.css" />
+    -->
+    <link rel="stylesheet" href="{{siteConf 'url'}}js/jquery/plugins/jquery-ui.min.css" />
+    
+    <script type="text/javascript" src="{{siteConf 'url'}}js/main.js?v={{packageVal 'version'}}"></script>
+    
+    <script type="text/javascript" src="{{VDirInfo.PreferredVDir}}/dist/kdoc.js?v={{packageVal 'version'}}"></script>
+
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="{{siteConf 'url'}}css/classification-ie8.css?v={{packageVal 'version'}}">
+    <script type="text/javascript" src="{{siteConf 'url'}}base/js/es5-shim.min.js"></script>
+    <script type="text/javascript" src="{{siteConf 'url'}}js/ie8/classification-ie8.js?v={{packageVal 'version'}}"></script>
+    <![endif]-->
+
+    <script>
+        (function (){
+            window.pluginKodObj = {
+                "verNameBrowser": {"n": "{{userAgentName}}", "v": "{{userAgentVersion}}"},
+                "siteUrl": "{{siteConf 'url'}}"
+            };
+
+            try {
+                window.pluginKodObj["VDirInfo"] = JSON.parse('{{{toJSON VDirInfo}}}');
+            } catch(e){}
+
+            try {
+                window.pluginKodObj["i18n"] = {
+                    'Server response error': "{{i18n 'Server response error'}}",
+                    'serviceName': "{{i18n 'serviceName'}}",
+                    'Appoint experts': "{{i18n 'Appoint experts'}}",
+                    "Close": "{{i18n 'Close'}}",
+                    "Requirements name": "{{i18n 'Requirements name'}}",
+                    "Filter": "{{i18n 'Filter'}}",
+                    "There are no selected classifier items": "{{i18n 'There are no selected classifier items'}}",
+                    "New Selection": "{{i18n 'New Selection'}}",
+                    "Saving a set of values": "{{i18n 'Saving a set of values'}}",
+                    "Set up a set of classifier values": "{{i18n 'Set up a set of classifier values'}}",
+                    "View full requirements": "{{i18n 'View full requirements'}}",
+                    "Selected": "{{i18n 'Selected'}}"
+                };
+            } catch(e){}
+
+            window.ClassSubM.pluginKodObj = window.pluginKodObj;
+        })();
+    </script>
+
+    <title>{{makeTitle title}}</title>
+</head>
+
+<body class="{{userAgentName}} ver-{{userAgentVersion}}" draggable="false">
+    <!--noindex-->
+    <div class="__hidden">
+        {{{evil-Icons}}}
+        {{{product-icons}}}
+        {{> partials/pieces-tmpl}}
+    </div>
+    <!--/noindex-->
+    <div class="wrapper {{headerstart}}">
+
+        {{> partials/header-menu}}
+
+        <div class="bg_pattern">
+
+            <div class="main-cnt">
+                {{> partials/top-menu}}
+                <div class="scroll_cnt">
+                    <section class="container hdb-body" data-tabs="main-tabs">{{{body}}}</section>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="dialogs"></div>
+    </div>
+</body>
+</html>

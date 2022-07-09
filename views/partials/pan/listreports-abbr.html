@@ -1,0 +1,28 @@
+<div class="info-block comment-info-full-width">
+    <div class="info-title __color_discuss">
+        Отчет о перечне аббревиатур и сокращений в тексте НД, не упомянутых в разделе «Обозначения и сокращения»
+    </div>
+
+    <!--<div class="icon icon--ei-spinner-3">
+        <div class="icon__spinner">
+            <svg class="icon__cnt"><use xlink:href="#ei-spinner-3-icon"></use></svg>
+        </div>
+    </div>-->
+
+<!--
+    <div class="__margin-bottom_s __margin-top_xxxl">
+        <div class="__strong __inline-block">Расшифровка не соответствует словарю:</div>
+        <div class="__inline-block">12</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <div class="__strong __inline-block">Отсутствуют в словаре:</div>
+        <div class="__inline-block">-</div>
+    </div>-->
+    <div class="__margin-top_xxl">
+        <div class="__strong __inline-block">Возможные аббревиатуры:</div>
+        <div class="__inline-block" id="abbr_abbr">{{> partials/pan/spinner}}</div>
+    </div>
+    <div class="__margin-bottom_s">
+        <a data-xhr-tabs="main-tabs" href="{{siteConf 'url'}}pan/reports?nd={{strnd}}&reports=abbr&showreport=true" class="btn __gray_btn" id="abbr_href">Подробный отчет</a>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="reports-type-4 reports-page relat-height">
+    <div class="top-po-pp __use-select-none">{{i18n 'Summary report on requirements'}}</div>
+
+    <div class="po-barnus">
+        {{> partials/reports/reports-table-filter}}
+
+        <table class="table-head-m  __use-select-none">
+            <tr>
+                <th class="num-puk">{{i18n '#p/p'}}</th>
+                <th class="name-of-nd">{{i18n 'Name of ND'}}</th>
+                <th class="require-ments">{{{i18n 'Requirements'}}}</th>
+            </tr>
+        </table>
+
+        <div class="scr-table">
+            <table class="table-report">
+                {{> partials/reports/reports-type-4-itm}}
+            </table>
+        </div>
+
+    </div>
+
+    {{> partials/document.title}}
+    
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var mB = $('body .wrapper .reports-type-4');
+            
+            ClassSubM.filterType4({mB: mB});
+        })();
+    </script>
+</div>
+

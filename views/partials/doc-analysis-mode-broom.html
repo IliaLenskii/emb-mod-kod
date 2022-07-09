@@ -1,0 +1,18 @@
+<div class="w-column-l brooms-blk __relative">
+
+    {{#if editing}}
+    <div class="co-bottom">
+        <a href="javascript:;" class="add-made">{{i18n 'Add a set'}}</a>
+    </div>
+    {{/if}}
+
+    {{> partials/lists/ready-made}}
+</div>
+
+<div class="w-column-r broom-values animated faster __relative">
+    <div class="stage-name">{{i18n 'Selected values'}}</div>
+
+    <div class="bro-values"></div>
+</div>
+
+<div class="w-column-r select-nn-req __use-select-none">{{i18n 'Select a set for viewing'}}</div>

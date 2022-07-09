@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="10">
+    <symbol id="kod-icon-check" viewBox="0 0 12 10">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd" transform="translate(-1041.000000, -243.000000)">
+            <g transform="translate(1020.000000, 212.000000)" >
+                <polygon transform="translate(27.010408, 35.010408) rotate(45.000000) translate(-27.010408, -35.010408) " points="24.0104076 38.5104076 24.0104076 40.0104076 30.0104076 40.5104076 29.5104076 29.5104076 28.0104076 29.5104076 28.0104076 38.5104076"></polygon>
+            </g>
+        </g>
+    </symbol>
+
+    <use xlink:href="#kod-icon-check" fill="#014A83" viewBox="0 0 12 10"></use>
+</svg>

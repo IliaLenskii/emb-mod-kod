@@ -1,0 +1,35 @@
+<div class="search-doc-kod">
+    <form name="form-search-doc-kod_{{formid}}" method="get" enctype="multipart/form-data" action="{{formAction}}">
+        <input type="hidden" name="s" value="1" />
+        <input type="hidden" name="transneftId" value="{{transneftId}}" />
+        <div class="butt-align">
+            <input type="text" class="it first-inp" maxlength="200" data-minlength="4" name="id_0_type_2_value" id="id_0_type_2_value" data-required="1" tabindex="1" placeholder="{{i18n 'Enter a phrase to search for'}}" spellcheck="false" value="{{searchQuery}}" />
+            <button type="submit" class="similar-btn start-search" tabindex="2" title="{{i18n 'Search'}}" disabled><svg class="svg-icon global-search-icon" viewBox="0 0 50 50"><use xlink:href="#ei-search-icon" /></svg></button>
+            <a href="javascript:;" class="icon-cross trans-anim cle" title="{{i18n 'Clear'}}"><svg><use xlink:href="#ei-close-icon"></use></svg></a>
+            <div class="icon icon--ei-spinner-3">
+                <div class="icon__spinner">
+                    <svg class="icon__cnt"><use xlink:href="#ei-spinner-3-icon"></use></svg>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        (function(){
+
+            if(!$ || !window.ClassSubM)
+                return;
+
+            var fo = document.forms['form-search-doc-kod_{{formid}}'];
+
+            ClassSubM.hotValidInput({
+                form: fo
+            });
+
+            ClassSubM.searchResultsKod({
+                form: fo
+            });
+            
+        })();
+    </script>
+</div>
